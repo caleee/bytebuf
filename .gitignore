@@ -1,0 +1,74 @@
+<GITIGNORE>
+# =====================
+# IDE专属配置 (专项隔离)
+# =====================
+# Eclipse/Flash Builder核心工程文件（用户明确要求保留）
+#.project                → 禁用全局匹配
+#.actionScriptProperties
+#.flexProperties
+
+# Eclipse工作区设置 → 建议开发者在全局gitignore中配置
+.settings/
+.metadata/
+
+# IntelliJ系列
+.idea/
+*.iml
+*.iws
+
+# VS Code
+.vscode/
+!.vscode/settings.json.example  # 允许示例配置
+
+# =====================
+# 构建系统防火墙
+# =====================
+# 编译产出物
+**/bin/
+**/bin-*/
+**/[Oo]bj/
+
+# 包管理器产物
+node_modules/
+jspm_packages/
+**/__pycache__/
+
+# 自动化工具缓存
+.grunt/
+.pnp*
+.yarn/
+
+# =====================
+# 发布制品隔离区
+# =====================
+*.swf    → 追加架构限定
+*.air$|*.ipa$|*.apk$  → 使用严格正则
+
+# 移动端签名文件
+*.keystore
+*.jks
+
+# =====================
+# 动态防御层
+# =====================
+# 跨平台垃圾文件防御
+**/.DS_Store
+._*
+Thumbs.db
+
+# 文档工作区锁定
+/.typora→ 绝对路径防护
+/.obsidian/workspace*
+
+# 安全加固区
+/stignore → 防止误识别
+/script_test → 保留测试框架入口
+
+# =====================
+# 智能过滤系统
+# =====================
+# 允许特定构建产物
+!**/bin/production/
+
+# 保留文档资产
+!*.pdf.swf
